@@ -1,8 +1,15 @@
-In this assignment let's build a **Nxt Trendz** App with Authentication by
-applying the concepts we have learned till now.
+### E-Commerce Application
+Make an Authentication Request to Login API</br>
+Handle Login API Response</br>
+On Login Success</br>
+On Login Failure</br>
+Store the JWT Token</br>
+
+
+### In this assignment let's build a **Nxt Trendz** App with Authentication 
 
 ### Refer to image below:
-
+** -- https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-authorisation-output-v2.gif -- **
 <br/>
 <div style="text-align: center;">
     <img src="https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-authorisation-output-v2.gif" alt="nxt-trendz-authorisation-desktop-output" style="max-width:90%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
@@ -223,11 +230,96 @@ alt text should be **cart**
 
 - Roboto
 
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being
->   imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a
->   look at the Cheat Sheets.
+### ** Concepts used in the application ** </br>
+### JWT Token
+JSON Web Token is a standard used to create Access Tokens. These access tokens are also called JWT Tokens.</br>
+
+The client uses these access tokens on every subsequent request to communicate with the Server.</br>
+While making HTTP Request, we have to send an access token in the HTTP Headers with the key Authorization.</br>
+Example:</br>
+
+Authorization: Bearer jwt_token</br>
+
+### Storing JWT Token in State
+When we store the JWT Token in the state,</br>
+
+On page refresh, the JWT token won't be available</br>
+It is difficult to pass state information to every component</br>
+
+
+### Storage Mechanisms
+### Client-Side Data Storage
+Storing Data on the Client
+### Server-Side Data Storage
+Storing Data on the Server using some kind of Database
+--> Different types of Client-Side data storage mechanisms are:</br>
+
+Local Storage</br>
+Cookies</br>
+Session Storage</br>
+IndexedDB, etc.</br>
+
+### Cookies
+A cookie is a piece of data that is stored on the user's computer by the web browser.
+
+A cookie is made up of:
+
+Name & Value
+Expires − The date the cookie will expire. If this is blank, the cookie will expire when the visitor quits the browser.</br>
+Domain − The domain name of your site.</br>
+Path − The path to the directory or web page that set the cookie. This may be blank if you want to retrieve the cookie from any directory or page.</br>
+Secure − If this field contains the word "secure", then the cookie may only be retrieved with a secure server. If this field is blank, no such restriction exists, etc.</br>
+
+ ### Why Cookies?
+With cookies, we can set the expiry duration.
+
+Examples:</br>
+
+Banking Applications - Cookies get expired in minutes</br>
+Facebook - Cookies get expired in months or years</br>
+
+### Cookies vs Local Storage
+![image](https://user-images.githubusercontent.com/46521639/117770046-14be2480-b252-11eb-8d7e-e05b73ea0b6e.png)
+
+### Third Party Package - js-cookie
+JavaScript can read, create, modify, and delete the cookies.</br>
+
+NPM contains a js-cookie, a third-party package to manipulate cookies easily.</br>
+
+Installation Command:   npm install js-cookie --save </br>
+
+js-cookie methods are:
+
+Cookies.set()- It is used to set the cookie</br>
+Cookies.get()- It is used to get the cookie</br>
+Cookies.remove()- It is used to remove the cookie</br>
+
+### Cookies.set()
+** Cookies.set('CookieName', 'CookieValue', { expires: DAYS });
+
+### Cookies.get()
+It returns undefined if the cookie does not exist/expire.
+** Cookies.get('CookieName');
+
+### Cookies.remove()
+** Cookies.remove('CookieName');
+
+### Redirect Component
+The react-router-dom provides the Redirect component. It can be used whenever we want to redirect to another path.</br>
+Syntax: -  <Redirect to="PATH" />
+
+### Redirect Component vs history Methods
+Use the Redirect Component when you have to stop displaying UI and navigate to a route. Ex: Inside Class Component - render()</br>
+In all other cases, use history.push() or history.replace() syntax Ex: Ex: onSubmit, onClick event callback functions</br>
+
+**The Redirect component uses the history push and replace methods behinds the scene.
+
+### withRouter
+The history prop will be available for only components which are directly given for Route.</br>
+
+To provide history prop to other components, we can wrap it with the withRouter function while exporting it.</br>
+
+Example:</br>
+import { withRouter} from 'react-router-dom'
+...
+export default withRouter(ComponentName)
