@@ -1,4 +1,4 @@
-## LIVE DEMO :- <a href="https://quirky-allen-bbaed4.netlify.app/login">Nxt TretZ</a>
+## LIVE DEMO :- <a href="https://quirky-allen-bbaed4.netlify.app">Nxt TretdZ</a>
 
 ### E-Commerce Application
 Make an Authentication Request to Login API</br>
